@@ -13,6 +13,9 @@ scraped_data = []
 stars_data = []
 
 def scrape():
+
+    soup = BeautifulSoup(browser.page_source, "html.parser")
+    
     bright_star_table = soup.find("table", attrs = {"class" : "wikitable"})
     table_body = bright_star_table.find("tbody")
     table_row = table_body.find_all("tr")
